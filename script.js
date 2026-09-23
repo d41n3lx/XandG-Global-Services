@@ -29,7 +29,7 @@
     (function(){
         // Replace with your EmailJS Public Key
         emailjs.init({
-            publicKey: "YOUR_PUBLIC_KEY",
+            publicKey: "Iv_wgKOfEI_xvLJJM",
         });
     })();
 </script>
