@@ -32,7 +32,7 @@ if (inquiryForm) {
         }
 
         // Send email via EmailJS
-        emailjs.sendForm('service_e0g2xi8', 'template_bwa6pwc', this)
+        emailjs.sendForm('service_e0g2xi8', 'template_9l5unfo', this)
             .then(function() {
                 // Show success notification message
                 if (notification) {
