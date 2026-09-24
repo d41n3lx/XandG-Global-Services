@@ -1,6 +1,8 @@
-// Initialize EmailJS
+// Initialize EmailJS with your Public Key
 (function() {
-    emailjs.init("Iv_wgKOfEI_xvLJJM"); 
+    emailjs.init({
+        publicKey: "Iv_wgKOfEI_xvLJJM",
+    });
 })();
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -38,14 +40,19 @@ document.addEventListener('DOMContentLoaded', () => {
         inquiryForm.addEventListener('submit', function(e) {
             e.preventDefault();
 
+            // Hide previous notification if visible
+            if (formNotification) {
+                formNotification.classList.add('hidden');
+            }
+
             // Disable button and show loading state
             if (submitBtn) {
                 submitBtn.disabled = true;
                 submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
             }
 
-            // Replace EmailJS credentials
-            emailjs.sendForm('service_e0g2xi8', 'template_9l5unfo', this)
+            // Send form using EmailJS v4
+            emailjs.sendForm('service_e0g2xi8', 'template_9l5unfo', e.target)
                 .then(() => {
                     // Success
                     if (formNotification) {
@@ -54,9 +61,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     inquiryForm.reset();
                 })
                 .catch((error) => {
-                    // Error
-                    alert("Failed to send inquiry. Please call us directly at +234 703 502 0023.");
-                    console.error('EmailJS Error:', error);
+                    // Error logging
+                    console.error('EmailJS Error Object:', error);
+                    alert("Failed to send inquiry: " + (error.text || "Check console for details") + "\n\nPlease call us directly at +234 703 502 0023.");
                 })
                 .finally(() => {
                     // Re-enable button
