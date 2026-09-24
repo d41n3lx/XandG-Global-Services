@@ -80,17 +80,33 @@ document.addEventListener('DOMContentLoaded', () => {
 function filterCategory(categoryName) {
     const filterButtons = document.querySelectorAll('.filter-tab');
     
-    // Update active tab styles
+    // Normalize target category string
+    const targetCategory = categoryName.trim().toLowerCase();
+
+    // 1. Update active tab styles
     filterButtons.forEach(btn => {
-        if (btn.textContent.trim().toLowerCase() === categoryName.toLowerCase() || 
-           (categoryName === 'All' && btn.textContent.trim() === 'All')) {
+        const btnText = btn.textContent.trim().toLowerCase();
+        
+        if (btnText === targetCategory || (categoryName === 'All' && btnText === 'all')) {
             btn.className = "filter-tab active px-4 py-2 rounded-lg text-xs font-bold bg-gold text-navy-dark transition";
         } else {
             btn.className = "filter-tab px-4 py-2 rounded-lg text-xs font-bold text-slate-300 bg-navy-card hover:text-gold transition border border-slate-800";
         }
     });
 
-    // Smooth scroll down to the listings section if coming from top category cards
+    // 2. Hide / Show Catalog Cards based on data-category
+    const catalogCards = document.querySelectorAll('.catalog-card');
+    catalogCards.forEach(card => {
+        const cardCategory = card.getAttribute('data-category')?.trim().toLowerCase();
+        
+        if (categoryName === 'All' || cardCategory === targetCategory) {
+            card.classList.remove('hidden');
+        } else {
+            card.classList.add('hidden');
+        }
+    });
+
+    // 3. Smooth scroll down to the listings section
     const listingsSection = document.getElementById('listings');
     if (listingsSection && window.scrollY < listingsSection.offsetTop - 200) {
         listingsSection.scrollIntoView({ behavior: 'smooth' });
