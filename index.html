@@ -285,7 +285,6 @@
                     </div>
                 </div>
 
-                <!-- NEW: Digital & Creative Services Card -->
                 <div class="bg-navy-card rounded-2xl p-8 border border-gold/20 hover:border-gold transition duration-300 gold-border-glow flex flex-col justify-between">
                     <div>
                         <div class="w-14 h-14 bg-navy rounded-xl border-2 border-gold flex items-center justify-center text-gold text-2xl mb-6 shadow-md">
@@ -367,7 +366,6 @@
                     <h4 class="font-bold text-white text-sm group-hover:text-gold transition">Commercial</h4>
                 </div>
 
-                <!-- NEW: Digital & Creative Category Card -->
                 <div onclick="filterCategory('Digital & Creative')" class="cursor-pointer group relative rounded-2xl overflow-hidden border border-gold/30 bg-navy-card text-center p-3 transition duration-300 hover:border-gold">
                     <div class="h-36 rounded-xl overflow-hidden mb-3">
                         <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=600&q=80" alt="Digital & Creative" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
@@ -396,13 +394,15 @@
                     <button onclick="filterCategory('Apartments')" class="filter-tab px-4 py-2 rounded-lg text-xs font-bold text-slate-300 bg-navy-card hover:text-gold transition border border-slate-800">Apartments</button>
                     <button onclick="filterCategory('Heavy Duty Equipment')" class="filter-tab px-4 py-2 rounded-lg text-xs font-bold text-slate-300 bg-navy-card hover:text-gold transition border border-slate-800">Heavy Equipment</button>
                     <button onclick="filterCategory('Commercial Property')" class="filter-tab px-4 py-2 rounded-lg text-xs font-bold text-slate-300 bg-navy-card hover:text-gold transition border border-slate-800">Commercial</button>
-                    <!-- NEW: Filter Button -->
                     <button onclick="filterCategory('Digital & Creative')" class="filter-tab px-4 py-2 rounded-lg text-xs font-bold text-slate-300 bg-navy-card hover:text-gold transition border border-slate-800">Digital & Creative</button>
                 </div>
             </div>
 
+            <!-- Catalogue Grid Container -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="catalogueGrid">
-                <div class="bg-navy-card rounded-2xl overflow-hidden border border-gold/20 hover:border-gold transition duration-300">
+                
+                <!-- CARD: Houses (Image) -->
+                <div class="catalog-card bg-navy-card rounded-2xl overflow-hidden border border-gold/20 hover:border-gold transition duration-300" data-category="Houses">
                     <div class="h-52 relative overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="4 Bedroom Duplex" class="w-full h-full object-cover">
                         <span class="absolute top-3 right-3 bg-navy-dark/90 text-gold text-xs font-extrabold px-3 py-1 rounded-full border border-gold/30">FOR SALE</span>
@@ -415,7 +415,8 @@
                     </div>
                 </div>
 
-                <div class="bg-navy-card rounded-2xl overflow-hidden border border-gold/20 hover:border-gold transition duration-300">
+                <!-- CARD: Lands (Image) -->
+                <div class="catalog-card bg-navy-card rounded-2xl overflow-hidden border border-gold/20 hover:border-gold transition duration-300" data-category="Lands">
                     <div class="h-52 relative overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80" alt="Dry Land Plot" class="w-full h-full object-cover">
                         <span class="absolute top-3 right-3 bg-navy-dark/90 text-gold text-xs font-extrabold px-3 py-1 rounded-full border border-gold/30">FOR SALE</span>
@@ -428,7 +429,8 @@
                     </div>
                 </div>
 
-                <div class="bg-navy-card rounded-2xl overflow-hidden border border-gold/20 hover:border-gold transition duration-300">
+                <!-- CARD: Heavy Duty Equipment (Image) -->
+                <div class="catalog-card bg-navy-card rounded-2xl overflow-hidden border border-gold/20 hover:border-gold transition duration-300" data-category="Heavy Duty Equipment">
                     <div class="h-52 relative overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1579412690850-bd41cd0af397?auto=format&fit=crop&w=800&q=80" alt="Motor Grader" class="w-full h-full object-cover">
                         <span class="absolute top-3 right-3 bg-gold text-navy-dark text-xs font-extrabold px-3 py-1 rounded-full">FOR HIRE</span>
@@ -440,6 +442,58 @@
                         <a href="https://wa.me/2348162359106?text=Hello%20X%26G%20Global,%20I%20want%20to%20hire%20the%20CAT%20Motor%20Grader" target="_blank" class="block text-center bg-gold hover:bg-gold-hover text-navy-dark font-extrabold py-2.5 rounded-lg text-xs transition">Hire Machinery</a>
                     </div>
                 </div>
+
+                <!-- NEW VIDEO CARD 1: Lands (Local Video) -->
+                <div class="catalog-card bg-navy-card rounded-2xl overflow-hidden border border-gold/20 hover:border-gold transition duration-300" data-category="Lands">
+                    <div class="h-52 relative overflow-hidden bg-black">
+                        <video controls class="w-full h-full object-cover">
+                            <source src="video1.mp4" type="video/mp4">
+                            Your browser does not support video playback.
+                        </video>
+                        <span class="absolute top-3 right-3 bg-navy-dark/90 text-gold text-xs font-extrabold px-3 py-1 rounded-full border border-gold/30 z-10">VIDEO TOUR</span>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-gold font-extrabold text-xl mb-1">₦2,500,000 / Plot</div>
+                        <h3 class="text-white font-bold text-base mb-2">Prime Waterfront Land Tour</h3>
+                        <p class="text-slate-400 text-xs mb-4 flex items-center gap-2"><i class="fa-solid fa-location-dot text-gold"></i> Airport Road, Warri</p>
+                        <a href="https://wa.me/2348162359106?text=Hello%20X%26G%20Global,%20I%20saw%20the%20video%20for%20the%20Waterfront%20Land" target="_blank" class="block text-center bg-gold hover:bg-gold-hover text-navy-dark font-extrabold py-2.5 rounded-lg text-xs transition">Inquire via WhatsApp</a>
+                    </div>
+                </div>
+
+                <!-- NEW VIDEO CARD 2: Houses (Local Video) -->
+                <div class="catalog-card bg-navy-card rounded-2xl overflow-hidden border border-gold/20 hover:border-gold transition duration-300" data-category="Houses">
+                    <div class="h-52 relative overflow-hidden bg-black">
+                        <video controls class="w-full h-full object-cover">
+                            <source src="video2.mp4" type="video/mp4">
+                            Your browser does not support video playback.
+                        </video>
+                        <span class="absolute top-3 right-3 bg-navy-dark/90 text-gold text-xs font-extrabold px-3 py-1 rounded-full border border-gold/30 z-10">VIDEO TOUR</span>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-gold font-extrabold text-xl mb-1">₦15,000,000</div>
+                        <h3 class="text-white font-bold text-base mb-2">Luxury 5-Bedroom Villa Walkthrough</h3>
+                        <p class="text-slate-400 text-xs mb-4 flex items-center gap-2"><i class="fa-solid fa-location-dot text-gold"></i> Asaba, Delta State</p>
+                        <a href="https://wa.me/2348162359106?text=Hello%20X%26G%20Global,%20I%20am%20interested%20in%20the%205-Bedroom%20Villa%20video" target="_blank" class="block text-center bg-gold hover:bg-gold-hover text-navy-dark font-extrabold py-2.5 rounded-lg text-xs transition">Inquire via WhatsApp</a>
+                    </div>
+                </div>
+
+                <!-- NEW VIDEO CARD 3: Heavy Duty Equipment (Local Video) -->
+                <div class="catalog-card bg-navy-card rounded-2xl overflow-hidden border border-gold/20 hover:border-gold transition duration-300" data-category="Heavy Duty Equipment">
+                    <div class="h-52 relative overflow-hidden bg-black">
+                        <video controls class="w-full h-full object-cover">
+                            <source src="video3.mp4" type="video/mp4">
+                            Your browser does not support video playback.
+                        </video>
+                        <span class="absolute top-3 right-3 bg-gold text-navy-dark text-xs font-extrabold px-3 py-1 rounded-full z-10">FOR HIRE</span>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-gold font-extrabold text-xl mb-1">₦220,000 / Day</div>
+                        <h3 class="text-white font-bold text-base mb-2">Heavy Crawler Excavator Demo</h3>
+                        <p class="text-slate-400 text-xs mb-4 flex items-center gap-2"><i class="fa-solid fa-truck-monster text-gold"></i> Deployable across Delta State</p>
+                        <a href="https://wa.me/2348162359106?text=Hello%20X%26G%20Global,%20I%20want%20to%20hire%20the%20Crawler%20Excavator" target="_blank" class="block text-center bg-gold hover:bg-gold-hover text-navy-dark font-extrabold py-2.5 rounded-lg text-xs transition">Hire Machinery</a>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
