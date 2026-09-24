@@ -83,7 +83,7 @@ function filterCategory(categoryName) {
     // Normalize target category string
     const targetCategory = categoryName.trim().toLowerCase();
 
-    // 1. Update active tab styles
+    // 1. Update active tab styles across filter buttons
     filterButtons.forEach(btn => {
         const btnText = btn.textContent.trim().toLowerCase();
         
@@ -106,7 +106,7 @@ function filterCategory(categoryName) {
         }
     });
 
-    // 3. Smooth scroll down to the listings section
+    // 3. Smooth scroll down to the listings section if needed
     const listingsSection = document.getElementById('listings');
     if (listingsSection && window.scrollY < listingsSection.offsetTop - 200) {
         listingsSection.scrollIntoView({ behavior: 'smooth' });
