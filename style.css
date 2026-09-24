@@ -85,6 +85,12 @@ input:focus, select:focus, textarea:focus {
     box-shadow: 0 0 10px rgba(227, 179, 65, 0.2);
 }
 
+/* Video Card Styling Enhancements */
+.catalog-card video {
+    outline: none;
+    background-color: #000000;
+}
+
 /* Pulse animation for WhatsApp Floating Button */
 @keyframes pulse-subtle {
     0%, 100% {
