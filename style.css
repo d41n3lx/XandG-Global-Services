@@ -1,24 +1,102 @@
+/* Custom Font Import Fallback */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Great+Vibes&display=swap');
+
+/* Base Styles & Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #071931;
+    color: #f1f5f9;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Custom Gold Glow Effects */
+.gold-border-glow {
+    transition: all 0.3s ease-in-out;
+}
+
+.gold-border-glow:hover {
+    border-color: #E3B341 !important;
+    box-shadow: 0 0 20px rgba(227, 179, 65, 0.25);
+    transform: translateY(-4px);
+}
+
+/* Hero Pattern Overlay Background */
+.hero-pattern {
+    background-color: #031021;
+    background-image: radial-gradient(rgba(227, 179, 65, 0.12) 1px, transparent 1px), 
+                      radial-gradient(rgba(227, 179, 65, 0.08) 1px, #031021 1px);
+    background-size: 40px 40px;
+    background-position: 0 0, 20px 20px;
+}
+
+/* Translucent Glass Card Effect */
+.glass-panel {
+    background: rgba(14, 41, 77, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(227, 179, 65, 0.25);
+}
+
+/* Active State Styles for Portfolio & Listing Filters */
+.filter-tab.active {
+    background-color: #E3B341 !important;
+    color: #031021 !important;
+    border-color: #E3B341 !important;
+    box-shadow: 0 4px 12px rgba(227, 179, 65, 0.3);
+}
+
+.filter-tab {
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.filter-tab:hover {
+    color: #E3B341;
+    border-color: #E3B341;
+}
+
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #031021;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #E3B341;
-            border-radius: 4px;
-        }
-        .glass-panel {
-            background: rgba(12, 36, 69, 0.85);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(227, 179, 65, 0.25);
-        }
-        .gold-border-glow:hover {
-            box-shadow: 0 0 20px rgba(227, 179, 65, 0.3);
-            border-color: #E3B341;
-        }
-        .hero-pattern {
-            background-color: #071931;
-            background-image: radial-gradient(rgba(227, 179, 65, 0.12) 1px, transparent 1px);
-            background-size: 24px 24px;
-        }
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #031021;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #0e294d;
+    border: 1px solid rgba(227, 179, 65, 0.3);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #E3B341;
+}
+
+/* Form Input Focus States */
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #E3B341 !important;
+    box-shadow: 0 0 10px rgba(227, 179, 65, 0.2);
+}
+
+/* Pulse animation for WhatsApp Floating Button */
+@keyframes pulse-subtle {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 15px 30px rgba(16, 185, 129, 0.5);
+    }
+}
+
+a[title="Chat on WhatsApp"] {
+    animation: pulse-subtle 3s infinite ease-in-out;
+}
