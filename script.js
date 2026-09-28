@@ -76,11 +76,13 @@ function filterCategory(categoryName) {
     // Normalization mapping for filter names
     let normTarget = categoryName.trim().toLowerCase();
     if (normTarget === 'commercial') normTarget = 'commercial property';
+    if (normTarget === 'heavy duty equipment') normTarget = 'heavy equipment';
 
     // 1. Update active tab styles
     filterButtons.forEach(btn => {
         let btnText = btn.textContent.trim().toLowerCase();
         if (btnText === 'commercial') btnText = 'commercial property';
+        if (btnText === 'heavy duty equipment') btnText = 'heavy equipment';
         
         if (btnText === normTarget || (categoryName === 'All' && btnText === 'all')) {
             btn.className = "filter-tab active px-4 py-2 rounded-lg text-xs font-bold bg-gold text-navy-dark transition";
@@ -94,6 +96,7 @@ function filterCategory(categoryName) {
     catalogCards.forEach(card => {
         let cardCategory = card.getAttribute('data-category')?.trim().toLowerCase();
         if (cardCategory === 'commercial') cardCategory = 'commercial property';
+        if (cardCategory === 'heavy duty equipment') cardCategory = 'heavy equipment';
         
         if (categoryName === 'All' || cardCategory === normTarget) {
             card.classList.remove('hidden');
