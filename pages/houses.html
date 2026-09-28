@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Houses & Residential Properties - X&G Global Services</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/images/branding/logo.png">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Great+Vibes&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            DEFAULT: '#071931',
+                            dark: '#031021',
+                            light: '#0c2445',
+                            card: '#0e294d'
+                        },
+                        gold: {
+                            DEFAULT: '#E3B341',
+                            hover: '#cda032',
+                            light: '#f5d688',
+                            dark: '#a87f1f'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        motto: ['Great Vibes', 'cursive']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-navy text-slate-100 font-sans antialiased selection:bg-gold selection:text-navy">
+
+    <!-- Top Info Bar -->
+    <div class="bg-navy-dark border-b border-gold/20 text-xs py-2 px-4 hidden sm:block">
+        <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center text-slate-300">
+            <div class="flex items-center space-x-6">
+                <a href="tel:08162359106" class="flex items-center gap-2 hover:text-gold transition">
+                    <i class="fa-solid fa-phone text-gold"></i> +234 703 502 0023
+                </a>
+                <span class="flex items-center gap-2">
+                    <i class="fa-solid fa-location-dot text-gold"></i> 157 Jakpa Rd, Effurun, Delta State
+                </span>
+            </div>
+            <div class="flex items-center space-x-4">
+                <span class="font-motto text-gold text-lg tracking-wider">Invest Today, Secure Tomorrow</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="sticky top-0 z-50 bg-navy/95 backdrop-blur-md border-b border-gold/25 shadow-xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="../index.html" class="flex items-center gap-3 group">
+                    <div class="w-12 h-12 border-2 border-gold/80 rounded-xl flex items-center justify-center bg-navy-dark group-hover:border-gold transition-all duration-300 p-1.5 shadow-md">
+                        <svg viewBox="0 0 100 100" class="w-full h-full text-gold fill-current">
+                            <path d="M45,18 L45,55 L25,55 L25,90 L75,90 L75,55 L65,55 L65,28 L45,18 Z" fill="none" stroke="currentColor" stroke-width="4"/>
+                            <rect x="50" y="30" width="10" height="20" fill="none" stroke="currentColor" stroke-width="3"/>
+                            <rect x="30" y="62" width="10" height="12" fill="none" stroke="currentColor" stroke-width="2.5"/>
+                            <rect x="45" y="62" width="10" height="12" fill="none" stroke="currentColor" stroke-width="2.5"/>
+                            <rect x="60" y="62" width="10" height="12" fill="none" stroke="currentColor" stroke-width="2.5"/>
+                            <circle cx="15" cy="70" r="7" fill="currentColor"/>
+                            <line x1="15" y1="77" x2="15" y2="90" stroke="currentColor" stroke-width="3"/>
+                            <circle cx="85" cy="70" r="7" fill="currentColor"/>
+                            <line x1="85" y1="77" x2="85" y2="90" stroke="currentColor" stroke-width="3"/>
+                            <line x1="5" y1="90" x2="95" y2="90" stroke="currentColor" stroke-width="4"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="font-extrabold text-xl tracking-wider text-white flex items-center gap-1">
+                            X<span class="text-gold">&</span>G
+                        </div>
+                        <div class="text-[9px] font-bold tracking-[0.25em] text-gold uppercase">Global Services</div>
+                    </div>
+                </a>
+
+                <!-- Nav-Links linking back to home sections -->
+                <div class="hidden md:flex items-center space-x-8 font-semibold text-sm text-slate-200">
+                    <a href="../index.html" class="hover:text-gold transition">Home</a>
+                    <a href="../index.html#services" class="hover:text-gold transition">Services</a>
+                    <a href="../index.html#about" class="hover:text-gold transition">About Us</a>
+                    <a href="#catalog" class="text-gold font-bold transition">Houses Catalog</a>
+                    <a href="#contact" class="hover:text-gold transition">Contact</a>
+                </div>
+
+                <!-- Phone Button in Header -->
+                <div class="hidden md:flex items-center gap-3">
+                    <a href="tel:08162359106" class="bg-gold hover:bg-gold-hover text-navy-dark font-extrabold px-5 py-2.5 rounded-lg transition duration-300 text-sm shadow-lg shadow-gold/20 flex items-center gap-2">
+                        <i class="fa-solid fa-phone"></i> +234 703 502 0023
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobileMenuBtn" class="text-slate-300 hover:text-gold focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobileDrawer" class="hidden md:hidden bg-navy-dark border-b border-gold/20 px-4 pt-3 pb-6 space-y-3">
+            <a href="../index.html" class="mobile-link block py-2 text-slate-200 hover:text-gold border-b border-slate-800">Home</a>
+            <a href="../index.html#services" class="mobile-link block py-2 text-slate-200 hover:text-gold border-b border-slate-800">Services</a>
+            <a href="../index.html#about" class="mobile-link block py-2 text-slate-200 hover:text-gold border-b border-slate-800">About Us</a>
+            <a href="#catalog" class="mobile-link block py-2 text-gold font-bold border-b border-slate-800">Houses Catalog</a>
+            <a href="#contact" class="mobile-link block py-2 text-slate-200 hover:text-gold border-b border-slate-800">Contact Us</a>
+            <a href="tel:08162359106" class="block text-center bg-gold text-navy-dark font-bold py-3 rounded-lg mt-4">
+                <i class="fa-solid fa-phone mr-2"></i> Call +234 703 502 0023
+            </a>
+        </div>
+    </nav>
+
+    <!-- SECTION 1: Name Of Service & About Brief Box -->
+    <section class="relative bg-navy-dark py-16 border-b border-gold/15">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-8">
+                <div class="inline-flex items-center gap-2 text-gold font-bold text-xs tracking-widest uppercase mb-2">
+                    <i class="fa-solid fa-house-circle-check"></i> Real Estate & Property
+                </div>
+                <h1 class="text-3xl sm:text-5xl font-black text-white">HOUSES & RESIDENTIAL PROPERTIES</h1>
+            </div>
+
+            <!-- Brief summary card in company colors -->
+            <div class="glass-panel p-6 sm:p-8 rounded-2xl border border-gold/30 max-w-4xl mx-auto text-center shadow-2xl">
+                <p class="text-slate-200 text-sm sm:text-base leading-relaxed">
+                    X&G Global Services provides verified, legally backed residential houses, duplexes, bungalows, and family homes across Effurun, Warri, Asaba, and Delta State. We handle complete document verification, property tours, purchase negotiations, and lease management to secure your investments.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: Catalog Grid -->
+    <section id="catalog" class="py-16 bg-navy border-b border-gold/15">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white mb-2">Our Catalog Of Houses</h2>
+                <p class="text-slate-400 text-sm">Explore our available verified houses and residential properties below.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Card 1 -->
+                <div class="bg-navy-card rounded-2xl overflow-hidden border border-gold/20 hover:border-gold transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="h-48 relative overflow-hidden">
+                            <img src="../assets/images/houses/duplex-effurun.jpg" alt="4 Bedroom Duplex" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80'">
+                            <span class="absolute top-3 right-3 bg-navy-dark/90 text-gold text-[10px] font-extrabold px-2.5 py-1 rounded-full border border-gold/30">FOR SALE</span>
+                        </div>
+                        <div class="p-4 bg-navy-light/40 border-t border-b border-gold/10">
+                            <div class="text-gold font-extrabold text-lg mb-1">₦80,000,000</div>
+                            <h3 class="text-white font-bold text-sm mb-1 line-clamp-1">4-Bedroom Detached Duplex</h3>
+                            <p class="text-slate-400 text-xs flex items-center gap-1"><i class="fa-solid fa-location-dot text-gold"></i> GRA, Effurun</p>
+                        </div>
+                    </div>
+                    <div class="p-4 bg-navy-card">
+                        <a href="https://wa.me/2348162359106?text=Hello%20X%26G%20Global,%20I%20am%20interested%20in%20the%204%20Bedroom%20Duplex%20in%20Effurun" target="_blank" class="block text-center bg-gold hover:bg-gold-hover text-navy-dark font-extrabold py-2 rounded-lg text-xs transition">Inquire via WhatsApp</a>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-navy-card rounded-2xl overflow-hidden border border-gold/20 hover:border-gold transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="h-48 relative overflow-hidden bg-black">
+                            <video controls class="w-full h-full object-cover">
+                                <source src="../assets/videos/house-tours/house_vid1.mp4" type="video/mp4">
+                                Your browser does not support video playback.
+                            </video>
+                            <span class="absolute top-3 right-3 bg-navy-dark/90 text-gold text-[10px] font-extrabold px-2.5 py-1 rounded-full border border-gold/30 z-10">VIDEO TOUR</span>
+                        </div>
+                        <div class="p-4 bg-navy-light/40 border-t border-b border-gold/10">
+                            <div class="text-gold font-extrabold text-lg mb-1">₦150,000,000</div>
+                            <h3 class="text-white font-bold text-sm mb-1 line-clamp-1">Luxury 5-Bedroom Villa</h3>
+                            <p class="text-slate-400 text-xs flex items-center gap-1"><i class="fa-solid fa-location-dot text-gold"></i> Asaba, Delta State</p>
+                        </div>
+                    </div>
+                    <div class="p-4 bg-navy-card">
+                        <a href="https://wa.me/2348162359106?text=Hello%20X%26G%20Global,%20I%20am%20interested%20in%20the%205-Bedroom%20Villa%20video" target="_blank" class="block text-center bg-gold hover:bg-gold-hover text-navy-dark font-extrabold py-2 rounded-lg text-xs transition">Inquire via WhatsApp</a>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-navy-card rounded-2xl overflow-hidden border border-gold/20 hover:border-gold transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="h-48 relative overflow-hidden">
+                            <img src="../assets/images/houses/bungalow-1.jpg" alt="3 Bedroom Bungalow" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=600&q=80'">
+                            <span class="absolute top-3 right-3 bg-navy-dark/90 text-gold text-[10px] font-extrabold px-2.5 py-1 rounded-full border border-gold/30">FOR SALE</span>
+                        </div>
+                        <div class="p-4 bg-navy-light/40 border-t border-b border-gold/10">
+                            <div class="text-gold font-extrabold text-lg mb-1">₦45,000,000</div>
+                            <h3 class="text-white font-bold text-sm mb-1 line-clamp-1">Newly Built 3-Bedroom Bungalow</h3>
+                            <p class="text-slate-400 text-xs flex items-center gap-1"><i class="fa-solid fa-location-dot text-gold"></i> Airport Road, Warri</p>
+                        </div>
+                    </div>
+                    <div class="p-4 bg-navy-card">
+                        <a href="https://wa.me/2348162359106?text=Hello%20X%26G%20Global,%20I%20am%20interested%20in%20the%203%20Bedroom%20Bungalow" target="_blank" class="block text-center bg-gold hover:bg-gold-hover text-navy-dark font-extrabold py-2 rounded-lg text-xs transition">Inquire via WhatsApp</a>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-navy-card rounded-2xl overflow-hidden border border-gold/20 hover:border-gold transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="h-48 relative overflow-hidden">
+                            <img src="../assets/images/houses/duplex-1.jpg" alt="Terrace Duplex" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=600&q=80'">
+                            <span class="absolute top-3 right-3 bg-gold text-navy-dark text-[10px] font-extrabold px-2.5 py-1 rounded-full">FOR RENT</span>
+                        </div>
+                        <div class="p-4 bg-navy-light/40 border-t border-b border-gold/10">
+                            <div class="text-gold font-extrabold text-lg mb-1">₦3,500,000 / Year</div>
+                            <h3 class="text-white font-bold text-sm mb-1 line-clamp-1">4-Bedroom Terrace Duplex</h3>
+                            <p class="text-slate-400 text-xs flex items-center gap-1"><i class="fa-solid fa-location-dot text-gold"></i> Jakpa Road, Effurun</p>
+                        </div>
+                    </div>
+                    <div class="p-4 bg-navy-card">
+                        <a href="https://wa.me/2348162359106?text=Hello%20X%26G%20Global,%20I%20am%20interested%20in%20renting%20the%204%20Bedroom%20Terrace" target="_blank" class="block text-center bg-gold hover:bg-gold-hover text-navy-dark font-extrabold py-2 rounded-lg text-xs transition">Inquire via WhatsApp</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: Direct Contact Form -->
+    <section id="contact" class="py-16 bg-navy-dark border-b border-gold/15">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-navy-card p-8 rounded-3xl border border-gold/30 shadow-2xl">
+                <div class="text-center mb-6">
+                    <h2 class="text-2xl font-extrabold text-white mb-1">Request Property Assistance</h2>
+                    <p class="text-slate-400 text-xs">Fill in your requirements for houses and our Effurun team will contact you directly.</p>
+                </div>
+
+                <form id="inquiryForm" class="space-y-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1">Your Full Name *</label>
+                            <input type="text" name="from_name" required placeholder="e.g. David Okon" class="w-full bg-navy border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-gold">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1">Email Address *</label>
+                            <input type="email" name="user_email" required placeholder="example@gmail.com" class="w-full bg-navy border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-gold">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1">Phone Number *</label>
+                            <input type="tel" name="phone_number" required placeholder="08012345678" class="w-full bg-navy border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-gold">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1">Service Required</label>
+                            <select name="service_type" class="w-full bg-navy border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-gold">
+                                <option selected>Houses & Residential Properties</option>
+                                <option>Buying & Selling Of Property</option>
+                                <option>Property Rental</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 mb-1">Inquiry Details</label>
+                        <textarea name="message" rows="3" placeholder="Specify budget, desired location in Delta state, number of bedrooms..." class="w-full bg-navy border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-gold"></textarea>
+                    </div>
+
+                    <button type="submit" id="submitBtn" class="w-full bg-gold hover:bg-gold-hover text-navy-dark font-extrabold py-3.5 rounded-xl transition duration-300 shadow-lg shadow-gold/20 flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-paper-plane"></i> Submit House Inquiry
+                    </button>
+                </form>
+
+                <div id="formNotification" class="hidden mt-4 p-4 bg-emerald-900/50 border border-emerald-500 rounded-xl text-emerald-300 text-xs text-center">
+                    <i class="fa-solid fa-circle-check text-base mb-1 block"></i>
+                    Inquiry received! Our team will contact you shortly.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Sticky WhatsApp Button -->
+    <a href="https://wa.me/2348162359106?text=Hello%20X%26G%20Global%20Services,%20I%20am%20inquiring%20about%20your%20Houses." target="_blank" class="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-2xl transition duration-300 hover:scale-110" title="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- SECTION 4: Footer with links back to Homepage anchors -->
+    <footer class="bg-navy-dark text-slate-400 py-12 border-t border-gold/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="font-extrabold text-xl text-white mb-2">
+                        X<span class="text-gold">&</span>G Global Services
+                    </div>
+                    <p class="text-xs text-slate-400 mb-4">
+                        Buying, Selling, Renting, Heavy Machinery Hiring, Civil Engineering, Marine Logistics, and Digital Services in Delta State, Nigeria.
+                    </p>
+                    <div class="font-motto text-gold text-2xl">Invest Today, Secure Tomorrow</div>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-white text-sm mb-3 uppercase tracking-wider">Quick Navigation</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="../index.html" class="hover:text-gold transition">Homepage</a></li>
+                        <li><a href="../index.html#about" class="hover:text-gold transition">About X&G Global</a></li>
+                        <li><a href="../index.html#services" class="hover:text-gold transition">Our Main Services</a></li>
+                        <li><a href="../index.html#categories" class="hover:text-gold transition">All Categories</a></li>
+                        <li><a href="../index.html#contact" class="hover:text-gold transition">Main Contact Page</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-white text-sm mb-3 uppercase tracking-wider">Other Services</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="lands.html" class="hover:text-gold transition">Lands & Plots</a></li>
+                        <li><a href="apartments.html" class="hover:text-gold transition">Apartments & Flats</a></li>
+                        <li><a href="commercial.html" class="hover:text-gold transition">Commercial Properties</a></li>
+                        <li><a href="../index.html#listings" class="hover:text-gold transition">Heavy Machinery Hire</a></li>
+                        <li><a href="../index.html#listings" class="hover:text-gold transition">Marine Logistics</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-white text-sm mb-3 uppercase tracking-wider">Office Location</h4>
+                    <p class="text-xs text-slate-300 mb-2">157 Jakpa Rd, Effurun, Delta State, Nigeria.</p>
+                    <a href="tel:08162359106" class="text-gold font-bold text-sm block hover:underline">+234 816 235 9106</a>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 pt-6 text-xs text-center text-slate-500">
+                &copy; <span id="yearSpan"></span> X&G Global Services. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- EmailJS SDK Library & Script -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="../script.js"></script>
+</body>
+</html>
